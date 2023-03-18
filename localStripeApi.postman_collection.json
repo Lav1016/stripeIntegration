@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "a5453969-0cf6-46c2-a516-47a3625cb02b",
+		"name": "localStripeApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9630118"
+	},
+	"item": [
+		{
+			"name": "Charge Api",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerId\": \"cus_NS5891TlJB9qCl\",\r\n    \"number\": \"4242424242424242\",\r\n    \"exp_month\": 11,\r\n    \"exp_year\": 2023,\r\n    \"cvc\": \"314\",\r\n    \"amount\": 2000,\r\n    \"description\": \"six test charge by the card\",\r\n    \"currency\": \"USD\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/charge",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"charge"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transfer API",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"transfer_amount\": 2000,\r\n    \"currency\": \"USD\",\r\n    \"destination\": \"acct_1MgU6hR583Yrn0oI\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/transfer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"transfer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "StripeAcc_to_bankAcc API",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\": 2000,\r\n    \"currency\": \"USD\",\r\n    \"stripeAccountId\":\"acct_1MgU6hR583Yrn0oI\",\r\n    \"destination\": \"ba_1MigW2R583Yrn0oIpk51i45L\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/transfer_to_bankAccount",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"transfer_to_bankAccount"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACH Charge Api",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerID\":\"cus_NRiJj9kBH3Puts\",\r\n    \"amount\": 1000,\r\n    \"description\": \"test ach charge\",\r\n    \"currency\": \"usd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/achCharge",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"achCharge"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddBankAccountDetails API",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerID\": \"cus_NRiJj9kBH3Puts\",\r\n    \"country\": \"US\",\r\n    \"currency\": \"usd\",\r\n    \"account_holder_name\": \"Kathleen \",\r\n    \"account_holder_type\": \"individual\",\r\n    \"routing_number\": \"110000000\",\r\n    \"account_number\": \"000123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/addBankDetails",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"addBankDetails"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
